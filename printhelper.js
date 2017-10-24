@@ -1,0 +1,17 @@
+var utils = require("./utils.js");
+
+var printhelper = {
+	userBind:function(data,callback){
+		return utils.sendPost("/home/userbind",data,callback);		
+	},
+	getDeviceState:function(data,callback){
+		return utils.sendPost("/home/getdevicestate",data,callback);
+	},
+	printContent:function(data,callback){
+		return utils.sendPost("/home/printcontent2",data,callback);
+	},
+	getTaskState:function(data,callback){
+		return utils.sendPost("/home/getprinttaskstate",data,callback);
+	}
+}
+module.exports = printhelper;
