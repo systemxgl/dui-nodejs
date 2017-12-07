@@ -38,7 +38,7 @@ var jsonContent="[{\"Alignment\":0,\"BaseText\":\"" + content + "\",\"Bold\":0,\
 data = {
 	Uuid:uuid,
 	PrintContent:jsonContent,
-	OpenUserId:"160715" //改成用户设备绑定返回的OpenUserId即可
+	OpenUserId:"0" //改成用户设备绑定返回的OpenUserId即可
 }
 //请求回调
 function printContentCallBack(result){	
@@ -47,6 +47,20 @@ function printContentCallBack(result){
 	console.log("=="+result);
 }
 printhelper.printContent(data,printContentCallBack);
+
+//网页信息打印
+data = {
+	Uuid:uuid,
+	PrintUrl:"您要打印的网页地址",//例：http://www.open.mstching.com/print-demo.html
+	OpenUserId:"0" //改成用户设备绑定返回的OpenUserId即可
+}
+//请求回调
+function printHtmlContentCallBack(result){	
+	//处理您的业务逻辑
+	//返回格式 {"TaskId":0,"Code":200,"Message":"成功"}  TaskId:任务编号
+	console.log("=="+result);
+}
+printhelper.printHtmlContent(data,printHtmlContentCallBack);
 
 data = {
 	TaskId:0 //任务编号
